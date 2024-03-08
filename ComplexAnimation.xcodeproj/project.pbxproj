@@ -11,6 +11,7 @@
 		B3FEB3B22B9BACF700F15717 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEB3B12B9BACF700F15717 /* ContentView.swift */; };
 		B3FEB3B42B9BACF800F15717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEB3B32B9BACF800F15717 /* Assets.xcassets */; };
 		B3FEB3B72B9BACF800F15717 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FEB3B62B9BACF800F15717 /* Preview Assets.xcassets */; };
+		B3FEB3BF2B9BAD4200F15717 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEB3BE2B9BAD4200F15717 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B3FEB3B12B9BACF700F15717 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3FEB3B32B9BACF800F15717 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FEB3B62B9BACF800F15717 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3FEB3BE2B9BAD4200F15717 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		B3FEB3AE2B9BACF700F15717 /* ComplexAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				B3FEB3BD2B9BAD2F00F15717 /* Models */,
 				B3FEB3AF2B9BACF700F15717 /* ComplexAnimationApp.swift */,
 				B3FEB3B12B9BACF700F15717 /* ContentView.swift */,
 				B3FEB3B32B9BACF800F15717 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				B3FEB3B62B9BACF800F15717 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3FEB3BD2B9BAD2F00F15717 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3FEB3BE2B9BAD4200F15717 /* Book.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				B3FEB3B22B9BACF700F15717 /* ContentView.swift in Sources */,
 				B3FEB3B02B9BACF700F15717 /* ComplexAnimationApp.swift in Sources */,
+				B3FEB3BF2B9BAD4200F15717 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
