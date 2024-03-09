@@ -28,6 +28,39 @@ struct HomeView: View {
             .padding(.horizontal, 16)
             
             TagsView()
+            
+            GeometryReader { reader in
+                let size = reader.size
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 35) {
+                        ForEach(sampleBooks, id: \.self) {
+                            book in
+                            BookCardView(book: book)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func BookCardView(book: Book) -> some View {
+        GeometryReader { reader in
+            let size = reader.size
+            let rect = reader.frame(in: .named("SCROLLVIEW"))
+            
+            HStack(spacing: -20) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(book.title)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    
+                    Text("By \(book.author)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
         }
     }
     
@@ -61,6 +94,7 @@ struct HomeView: View {
                 }
             }
         }
+        .padding(.horizontal, 16)
     }
 }
 
