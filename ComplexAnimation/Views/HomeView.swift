@@ -55,6 +55,28 @@ struct HomeView: View {
                 .coordinateSpace(name: "SCROLLVIEW")
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.horizontal, 16)
+        .background(
+            Rectangle().fill(.white)
+                .ignoresSafeArea()
+                .opacity(showDetail ? 1 : 0)
+        )
+        .overlay {
+            if let selectedBook = selectedBook, showDetail {
+                // MARK: - Detail View
+                DetailView(isShowing: $showDetail, book: selectedBook, animation: animation)
+                
+            }
+        }
+        .onChange(of: showDetail) { newValue in
+            if !newValue {
+                withAnimation(.linear(duration: 0.3).delay(0.2)) {
+                    animateCurrentBook = false
+                }
+            }
+        }
+        
     }
     
     func bottomPadding(size: CGSize) -> CGFloat {
