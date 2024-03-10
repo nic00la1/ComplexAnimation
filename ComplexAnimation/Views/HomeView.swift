@@ -59,9 +59,57 @@ struct HomeView: View {
                     Text("By \(book.author)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
+                    
+                    RatingView(rating: book.rating)
+                    
+                    Spacer(minLength: 4)
+                    
+                    HStack {
+                        Text("\(book.bookView)")
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.cyan)
+                        
+                        Text("Views")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                        
+                        Spacer(minLength: 0)
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                    }
                 }
+                .padding(20)
+                .frame(width: size.width/2, height: size.height * 0.8)
+                .background(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(.white)
+                        .shadow(color: .black.opacity(0.08), radius: 8, x: 5, y: 5)
+                        .shadow(color: .black.opacity(0.08), radius: 8, x: -5, y: -5)
+                )
+                .zIndex(1)
+                .offset(x: animateCurrentBook && selectedBook?.id == book.id ? -(size.width/2 + 20) : 0)
+                
+                ZStack {
+                    if !(showDetail && selectedBook?.id == book.id) {
+                        Image(book.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: size.width / 2, height: size.height)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .matchedGeometryEffect(id: book.id, in: animation)
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .frame(width: size.width)
+            .padding(.vertical, 16)
         }
+        .frame(height: 220)
+        .padding(.horizontal, 16)
     }
     
     @ViewBuilder
