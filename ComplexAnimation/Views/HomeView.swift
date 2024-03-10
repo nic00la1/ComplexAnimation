@@ -66,6 +66,7 @@ struct HomeView: View {
             if let selectedBook = selectedBook, showDetail {
                 // MARK: - Detail View
                 DetailView(isShowing: $showDetail, book: selectedBook, animation: animation)
+                    .transition(.asymmetric(insertion: .identity, removal: .offset(y: 5)))
                 
             }
         }
